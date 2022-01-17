@@ -3,11 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: '"Poppins", "sans-serif"',
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 320,
+      md: 878,
+      lg: 1200,
+      xl: 1500,
+    },
+  },
+  palette: {
+    primary: {
+      main: '#009DE0',
+    },
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
